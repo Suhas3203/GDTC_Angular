@@ -1,0 +1,114 @@
+<div class="container">
+  <h1>Welcome, {{ userName }} ...!</h1>
+
+  <div class="offers">
+    <h2>Exciting Offers</h2>
+    <div class="courses">
+      <div class="course" *ngFor="let course of courses">
+        <img src="{{ poster }}" alt="{{ course.name }}" />
+        <h3>{{ course.name }}</h3>
+        <!-- <p>{{ course.description }}</p> -->
+        <p><strong>Benefits:</strong> {{ course.description }}</p>
+        <!-- <p>
+          <strong>Price:</strong> <span class="price">{{ course.price }}</span>
+          <span class="discount">{{ course.discount }}% off</span>
+        </p> -->
+        <a href="{{ link }}">Enroll Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="posters">
+    <h2>How Our Courses Can Benefit You</h2>
+    <div class="courses">
+      <div class="course">
+        <img
+          src="https://source.unsplash.com/random/300x200/?codes-in-angular"
+          alt="Course 1"
+        />
+        <h3>Introduction to Angular</h3>
+        <p>
+          Understand the core concepts of Angular and build your first web
+          application.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="course">
+        <img
+          src="https://source.unsplash.com/random/300x200/?javascript-design"
+          alt="Course 2"
+        />
+        <h3>Advanced JavaScript</h3>
+        <p>
+          Learn how to build complex applications using advanced JavaScript
+          techniques.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="course">
+        <img
+          src="https://source.unsplash.com/random/300x200/?coding-web-design"
+          alt="Course 3"
+        />
+        <h3>Web Design Fundamentals</h3>
+        <p>
+          Learn the basics of web design and create beautiful and responsive
+          websites.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="course">
+        <img
+          src="https://source.unsplash.com/random/300x200/?coding-python"
+          alt="Course 3"
+        />
+        <h3>Python for Data Science</h3>
+        <p>
+          Learn Python programming language and its application in Data Science.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews">
+    <h2>Learners Feedback</h2>
+    <div class="slider">
+      <div class="slide" *ngFor="let review of reviews">
+        <p class="quote">{{ review.quote }}</p>
+        <p class="name">{{ review.name }}</p>
+        <div class="rating">
+          <span
+            *ngFor="let star of [1, 2, 3, 4, 5]"
+            [ngClass]="{ filled: star <= review.rating }"
+            >&#9733;</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="my-courses">
+    <h2>My Courses</h2>
+    <div class="card-group">
+      <div class="card" *ngFor="let course of courses">
+        <div class="card-header">{{ course.title }}</div>
+        <div class="card-body">
+          <p class="card-text">{{ course.description }}</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <p><strong>Branch:</strong> {{ course.branch }}</p>
+              <p><strong>Duration:</strong> {{ course.duration }}</p>
+            </div>
+            <div class="col-sm-6">
+              <p><strong>Start Date:</strong> {{ course.startDate }}</p>
+              <p><strong>End Date:</strong> {{ course.endDate }}</p>
+              <p><strong>Status:</strong> {{ course.status }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

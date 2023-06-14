@@ -1,0 +1,39 @@
+<!-- in-progress.component.html -->
+
+<div class="container">
+  <h2 class="text-center mt-3">In Progress Courses</h2>
+  <div
+    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-5"
+    style="display: flex; margin: 5px"
+  >
+    <div
+      class="col"
+      *ngFor="let courses of inProgressCourses"
+      style="width: 300px; height: 500px; margin: 10px"
+    >
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ courses.course.title }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="https://source.unsplash.com/random/900×700/?coding"
+          alt="{{ courses.course.title }}"
+          width="300"
+          height="200"
+        />
+        <mat-card-content>
+          <p>{{ courses.course.description }}</p>
+          <p><strong>Branch: </strong>{{ courses.branch.branchLocation }}</p>
+          <p><strong>Duration: </strong>{{ courses.duration }}</p>
+          <p><strong>Start Date: </strong>{{ courses.startDate | date }}</p>
+          <p><strong>End Date: </strong>{{ courses.endDate | date }}</p>
+          <p>
+            <strong>Fees Paid: </strong>{{ courses.fees | currency : "INR" }}
+          </p>
+          <p><strong>Status: </strong>In Progress</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

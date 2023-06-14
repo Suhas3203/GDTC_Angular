@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Edit Course: {{ course.title }}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="course.title" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Description"
+      [(ngModel)]="course.description"
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      placeholder="Registration Validity Date"
+      [(ngModel)]="course.registrationValidity"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select
+      placeholder="Branches"
+      [(ngModel)]="course.branchesList"
+      multiple
+    >
+      <mat-option *ngFor="let branch of course.branchesList" [value]="branch">{{
+        branch.branchLocation
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="saveChanges()">
+    Update
+  </button>
+  <button mat-raised-button (click)="closeDialog()">Cancel</button>
+</mat-dialog-actions>

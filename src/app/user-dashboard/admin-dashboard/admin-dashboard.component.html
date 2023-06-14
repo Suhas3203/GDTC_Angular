@@ -1,0 +1,64 @@
+<main>
+  <h1>Welcome back, {{ userName }} ...!</h1>
+  <div class="stats">
+    <div class="stat">
+      <h2>Total Courses</h2>
+      <p class="count">{{ totalCourses }}</p>
+    </div>
+    <div class="stat">
+      <h2>Total Enrollments</h2>
+      <p class="count">{{ totalRegistrations }}</p>
+    </div>
+    <div class="stat">
+      <h2>Total Users</h2>
+      <p class="count">{{ totalStudents }}</p>
+    </div>
+    <div class="stat">
+      <h2>Total Instructors</h2>
+      <p class="count">{{ totalCourses }}</p>
+    </div>
+  </div>
+
+  <div class="recent-courses" style="text-align: center">
+    <h2>Recent Courses</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Instructor</th>
+          <th>Enrollments</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Introduction to HTML</td>
+          <td>John Doe</td>
+          <td>42</td>
+          <td>
+            <a href="#" class="edit-btn">Edit</a>
+            <a href="#" class="delete-btn">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Introduction to CSS</td>
+          <td>Jane Smith</td>
+          <td>35</td>
+          <td>
+            <a href="#" class="edit-btn">Edit</a>
+            <a href="#" class="delete-btn">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td>JavaScript Basics</td>
+          <td>Mike Johnson</td>
+          <td>28</td>
+          <td>
+            <a href="#" class="edit-btn">Edit</a>
+            <a href="#" class="delete-btn">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

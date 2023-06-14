@@ -1,0 +1,91 @@
+<div class="ticket">
+  <h2 style="text-align: center">Raise a Ticket</h2>
+  <mat-dialog-content>
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Name" required />
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput formControlName="email" placeholder="Email" required />
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="course"
+          placeholder="Course Name"
+          required
+        />
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <mat-form-field>
+        <mat-select formControlName="course" placeholder="Select Course" required>
+          <mat-option *ngFor="let course of courses" [value]="course">{{
+            course.title
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="subject"
+          placeholder="Subject"
+          required
+        />
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+      <mat-form-field style="width: 450px">
+        <textarea
+          matInput
+          formControlName="issue"
+          placeholder="Issue"
+          rows="4"
+          cols="90"
+          required
+        ></textarea>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <!-- <h2>File Upload With Progress Bar In Angular 13 - Websolutionstuff</h2>
+        <input type="file" (change)="upload($event.target.file[0])" />
+        <div class="progress" *ngIf="progress">
+          <div class="progress-bar" [style.width]="progress + '%'">
+            {{ progress }}%
+          </div>
+        </div> -->
+
+      <!-- <input
+         
+          type="file"
+          class="file-input"
+          (change)="onFileSelected($event)"
+          #fileUpload
+        /> -->
+      <!-- <mat-form-field>        MatInput-->
+      <!-- <div class="file-upload">
+          {{ fileName || "No file uploaded yet." }}
+
+          <button
+            mat-mini-fab
+            color="primary"
+            class="upload-btn"
+            (click)="fileUpload.click()"
+          >
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </div> -->
+
+      <mat-dialog-actions>
+        <button
+          mat-raised-button
+          type="submit"
+          [disabled]="ticketForm.invalid"
+          style="margin-left: 200px; justify-content: end"
+        >
+          Submit
+        </button>
+      </mat-dialog-actions>
+    </form>
+  </mat-dialog-content>
+</div>

@@ -1,0 +1,26 @@
+.mat-drawer-container {
+  position: relative;
+  z-index: 1;
+  min-height: 650px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  overflow: hidden;
+}
+
+.sidenav {
+  width: 220px;
+  max-height: 500px;
+}
+.nav-header {
+  font-size: 14px;
+  color: #999;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+.nav-label {
+  margin-left: 12px;
+}
+.active-link {
+  background-color: rgba(0, 0, 0, 0.08);
+}

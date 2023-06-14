@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Edit User: {{ user.name }}</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="user.name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" [(ngModel)]="user.email" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="MobileNumber"
+      [(ngModel)]="user.mobileNumber"
+    />
+  </mat-form-field>
+  <!-- <mat-form-field>
+    <input matInput placeholder="Password" [(ngModel)]="user.password" name="password">
+  </mat-form-field> -->
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="City Name"
+      [(ngModel)]="user.learnerLocation.cityName"
+    />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="saveChanges()">
+    Update
+  </button>
+  <button mat-raised-button (click)="closeDialog()">Cancel</button>
+</mat-dialog-actions>

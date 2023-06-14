@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <h2 class="text-center mt-3">All registrations for Courses You've Done</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field>
+                  <mat-label>Filter registrations</mat-label>
+                  <input
+                    matInput
+                    (keyup)="applyFilter($event)"
+                    placeholder="Enter a search term"
+                    [(ngModel)]="filterValue"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <mat-table
+                  [dataSource]="registrations"
+                  matSort
+                  class="mat-elevation-z8"
+                >
+                  <!-- registrations Title Column -->
+                  <ng-container matColumnDef="title">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>
+                      Title
+                      <input
+                        matInput
+                        (keyup)="applyFilter($event)"
+                        placeholder="Enter a search term"
+                        [(ngModel)]="filterValue"
+                      />
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let registrations">
+                      {{ registrations.course.title }}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- registrations Description Column -->
+                  <ng-container matColumnDef="description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>
+                      Description
+                      <input
+                        matInput
+                        (keyup)="applyFilter($event)"
+                        placeholder="Enter a search term"
+                        [(ngModel)]="filterValue"
+                      />
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let registrations">
+                      {{ registrations.course.description }}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- registrations Branch Column -->
+                  <ng-container matColumnDef="branchesList">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>
+                      Branch
+                      <input
+                        matInput
+                        (keyup)="applyFilter($event)"
+                        placeholder="Enter a search term"
+                        [(ngModel)]="filterValue"
+                      />
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let registrations">
+                      {{ registrations.branch.branchLocation }}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- registrations Start Date Column -->
+                  <ng-container matColumnDef="startDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>
+                      Start Date
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let registrations">
+                      {{ registrations.startDate | date : "yyyy-MM-dd" }}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- registrations End Date Column -->
+                  <ng-container matColumnDef="endDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>
+                      End Date
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let registrations">
+                      {{ registrations.endDate | date : "yyyy-MM-dd" }}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- registrations Status Column -->
+                  <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>
+                      Status
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let registrations">
+                      <span
+                        [ngClass]="
+                          registrations.startDate > today
+                            ? 'Not yet Started'
+                            : registrations.endDate > today
+                            ? 'in-progress'
+                            : 'completed'
+                        "
+                      >
+                        {{
+                          registrations.startDate > today
+                            ? "Not yet Started"
+                            : registrations.endDate > today
+                            ? "in-progress"
+                            : "completed"
+                        }}
+                        <!-- registrations.endDate >= today
+                            ? "Completed"
+                            : "In Progress" &&  -->
+                        <!-- {{
+                          registrations.startDate < today
+                            ? "Not yet Started"
+                            : "in-progress"
+                        }} -->
+                      </span>
+                    </mat-cell>
+                  </ng-container>
+
+                  <ng-container>
+                    <mat-header-row> </mat-header-row>
+                    <mat-row *matNoDataRow>
+                      <h2>
+                        <strong>
+                          <span class="records-found"
+                            >No Records Found ...!</span
+                          >
+                          <!-- <span class="records-found">No Records Found ...!</span> -->
+                        </strong>
+                      </h2>
+                    </mat-row>
+                  </ng-container>
+                  <mat-header-row
+                    *matHeaderRowDef="displayedColumns"
+                  ></mat-header-row>
+                  <mat-row
+                    *matRowDef="let row; columns: displayedColumns"
+                  ></mat-row>
+                </mat-table>
+                <div class="mat-elevation-z8 my-3">
+                  <mat-paginator
+                    [pageSizeOptions]="[5, 10, 25, 100]"
+                  ></mat-paginator>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

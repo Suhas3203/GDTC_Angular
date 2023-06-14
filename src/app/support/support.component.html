@@ -1,0 +1,31 @@
+<!-- <p>Support Works!</p>  -->
+
+<div class="header">
+  <div class="logo">
+    <img
+      src="/assets/InstituteAliens.png"
+      alt="Logo"
+      routerLink="/home"
+      title="Logo Of Institute"
+    />
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <h2><strong> Support and Help for Issues(Service 24x7) </strong></h2>
+  <button mat-raised-button color="primary" (click)="openTicketDialog()">
+    Raise a Ticket
+  </button>
+</div>
+
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let faq of faqs">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ faq.question }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{ faq.answer }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>View Course: {{ course.title }}</h2>
+<mat-dialog-content>
+  <p><strong>Title:</strong> {{ course.title }}</p>
+  <p><strong>Description:</strong> {{ course.description }}</p>
+  <p>
+    <strong>Registration Validity Date:</strong>
+    {{ course.registrationValidity }}
+  </p>
+  <p><strong>Branches: </strong>
+  <div *ngFor="let branch of course.branchesList" style="margin-left: 80px;">
+    {{ branch.branchLocation }}
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="closeDialog()">
+    Close
+  </button>
+</mat-dialog-actions>

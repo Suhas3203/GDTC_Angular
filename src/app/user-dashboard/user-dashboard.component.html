@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list *ngIf="is_Admin">
+          <mat-list-item
+            routerLink="/home/user-dashboard/admin-dashboard"
+            routerLinkActive="active-link"
+          >
+            Personal Info
+          </mat-list-item>
+          <mat-list-item
+            routerLink="/home/user-dashboard/all-users"
+            routerLinkActive="active-link"
+          >
+            All Users
+          </mat-list-item>
+          <mat-list-item
+            routerLink="/home/user-dashboard/courseslist"
+            routerLinkActive="active-link"
+          >
+            Courses List
+          </mat-list-item>
+        </mat-nav-list>
+
+        <mat-nav-list *ngIf="!is_Admin">
+          <mat-list-item
+            routerLink="/home/user-dashboard/dashboard"
+            routerLinkActive="active-link"
+          >
+            <mat-icon>home</mat-icon>
+            <span class="nav-label">Home</span>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="nav-header">My Courses</div>
+          </mat-list-item>
+          <mat-list-item
+            routerLink="/home/user-dashboard/all-courses"
+            routerLinkActive="active-link"
+          >
+            <mat-icon>view_list</mat-icon>
+            <span class="nav-label">All Courses</span>
+          </mat-list-item>
+          <mat-list-item
+            routerLink="/home/user-dashboard/in-progress"
+            routerLinkActive="active-link"
+          >
+            <mat-icon>play_circle_filled</mat-icon>
+            <span class="nav-label">In Progress</span>
+          </mat-list-item>
+          <mat-list-item
+            routerLink="/home/user-dashboard/completed"
+            routerLinkActive="active-link"
+          >
+            <mat-icon>done_all</mat-icon>
+            <span class="nav-label">Completed</span>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="nav-header">Jobs</div>
+          </mat-list-item>
+          <mat-list-item
+            routerLink="/home/user-dashboard/jobs"
+            routerLinkActive="active-link"
+          >
+            <mat-icon>work</mat-icon>
+            <span class="nav-label">Jobs</span>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
+      <!-- Content -->
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+        <!-- <app-spinner></app-spinner> -->
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

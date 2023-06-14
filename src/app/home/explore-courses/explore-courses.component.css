@@ -1,0 +1,9 @@
+.course-card {
+  margin: 5px;
+  overflow-y: auto;
+}
+
+.course-card:hover {
+  transform: scale(1.04);
+  overflow-y: auto;
+}

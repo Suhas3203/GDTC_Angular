@@ -1,0 +1,70 @@
+<div class="logout-container">
+  <div class="logout-box">
+    <img
+      src="https://i.stack.imgur.com/djlWI.png"
+      alt="Logout Icon"
+      class="logout-icon"
+    />
+    <h1 class="logout-heading">You have successfully logged out.</h1>
+    <p class="logout-message">Have a good day!</p>
+    <div class="logout-options">
+      <button mat-button routerLink="/" color="primary">Home</button>
+      <button mat-button (click)="openFeedbackDialog()" color="primary">
+        Provide Feedback
+      </button>
+    </div>
+  </div>
+
+  <ng-template #feedbackDialog>
+    <h2 mat-dialog-title>Feedback</h2>
+    <mat-dialog-content>
+      <form>
+        <mat-form-field>
+          <input matInput placeholder="Name" required />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" required />
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Feedback" required></textarea>
+        </mat-form-field>
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button (click)="onSubmit()" color="primary">Submit</button>
+    </mat-dialog-actions>
+  </ng-template>
+</div>
+
+<!-- <div class="logout-container">
+    <div class="logout-box">
+      <img src="https://image.flaticon.com/icons/svg/119/119665.svg" alt="Logout Icon" class="logout-icon">
+      <h1 class="logout-heading">You are now logged out</h1>
+      <div class="logout-options">
+        <button mat-button routerLink="/" color="primary">Home</button>
+        <button mat-button (click)="openFeedbackDialog()" color="primary">Provide Feedback</button>
+      </div>
+    </div>
+  
+    <ng-template #feedbackDialog>
+      <h2 mat-dialog-title>Feedback</h2>
+      <mat-dialog-content>
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Name" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Email" required>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="Feedback" required></textarea>
+          </mat-form-field>
+        </form>
+      </mat-dialog-content>
+      <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button color="primary">Submit</button>
+      </mat-dialog-actions>
+    </ng-template>
+  </div> -->

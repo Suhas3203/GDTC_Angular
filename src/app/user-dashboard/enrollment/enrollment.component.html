@@ -1,0 +1,73 @@
+<mat-card class="card">
+  <mat-card-title>Enroll to {{ selectedCourse.title }}</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>User ID</mat-label>
+        <input matInput formControlName="userId" readonly />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Course ID</mat-label>
+        <input matInput formControlName="courseId" readonly />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Branch</mat-label>
+        <mat-select formControlName="branch">
+          <mat-option
+            *ngFor="let branch of selectedCourse.branchesList"
+            [value]="branch.branchId"
+            >{{ branch.branchLocation }}</mat-option
+          >
+        </mat-select>
+        <mat-error *ngIf="enrollmentForm.get('branch')?.invalid">{{
+          branchErrorMessage
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Duration (in months upto 12)</mat-label>
+        <input
+          matInput
+          type="number"
+          max="12"
+          min="3"
+          formControlName="duration"
+        />
+        <mat-error *ngIf="enrollmentForm.get('duration')?.invalid">{{
+          durationErrorMessage
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Course Start Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="courseStartDatePicker"
+          formControlName="courseStartDate"
+        />
+        <!-- (dateChange)="changeDateFormat(courseStartDatePicker)" -->
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="courseStartDatePicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #courseStartDatePicker></mat-datepicker>
+        <mat-error *ngIf="enrollmentForm.get('courseStartDate')?.invalid">{{
+          courseStartDateErrorMessage
+        }}</mat-error>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="enrollmentForm.invalid"
+        >
+          Enroll Now
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

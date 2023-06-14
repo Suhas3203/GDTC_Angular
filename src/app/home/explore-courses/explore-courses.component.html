@@ -1,0 +1,68 @@
+<mat-grid-list
+  cols="3"
+  rowHeight="650px"
+  style="margin-bottom: 10px; text-align: center"
+>
+  <mat-grid-tile *ngFor="let course of courses">
+    <mat-card class="course-card">
+      <img
+        mat-card-image
+        src="{{ imageUrl }}"
+        alt="{{ course.title }}"
+        width="400"
+        height="300"
+      />
+      <!-- course. -->
+      <mat-card-content>
+        <h2 mat-card-title>{{ course.title }}</h2>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Branches available</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let branch of course.branchesList">
+              {{ branch.branchLocation }}
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          style="margin: 10px auto"
+          (click)="openCourseDetails(course)"
+        >
+          View details
+        </button>
+
+        <button
+          mat-raised-button
+          color="accent"
+          style="margin: 10px auto"
+          (click)="enrollToCourse(course)"
+        >
+          Enroll Now
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <mat-grid-list cols="3" rowHeight="300px" gutterSize="10px">
+  <mat-grid-tile *ngFor="let course of courses">
+    <mat-card class="course-card">
+      <img mat-card-image [src]="course.imageUrl" />
+      <mat-card-content>
+        <h2 mat-card-title>{{ course.name }}</h2>
+        <p mat-card-subtitle>{{ course.branches }}</p>
+        <p>{{ course.branches }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="openCourseDetails(course)">
+          View Details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->

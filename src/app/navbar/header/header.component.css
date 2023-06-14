@@ -1,0 +1,14 @@
+.navbar-nav > li:last-child {
+    padding-left: 20px;
+    border-left: 1px solid #000;
+  }
+  
+  /* logo */
+  .logo-img {
+    margin-top: -20px;
+    margin-left: 30px;
+    padding-top: 0%;
+    height: 56px;
+    width: 120px;
+  }
+  

@@ -1,0 +1,70 @@
+<h2 mat-dialog-title style="text-align: center">Register</h2>
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="register()"
+  style="text-align: center"
+>
+  <mat-form-field>
+    <input matInput formControlName="name" placeholder="Name" />
+    <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">
+      Name is required
+    </mat-error>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput formControlName="email" placeholder="Email" />
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+      Email is required
+    </mat-error>
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">
+      Invalid email format
+    </mat-error>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="mobileNumber"
+      placeholder="Mobile Number"
+    />
+    <mat-error
+      *ngIf="registrationForm.get('mobileNumber')?.hasError('required')"
+    >
+      Mobile Number is required
+    </mat-error>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">
+      Password is required
+    </mat-error>
+  </mat-form-field>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <mat-form-field>
+    <input matInput formControlName="cityName" placeholder="City Name" />
+    <mat-error *ngIf="registrationForm.get('cityName')?.hasError('required')">
+      City Name is required
+    </mat-error>
+  </mat-form-field>
+  <div class="registration-actions">
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!registrationForm.valid"
+    >
+      Register
+    </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="warn" (click)="confirmClosing()">
+      Cancel
+    </button>
+  </div>
+</form>
+<br />

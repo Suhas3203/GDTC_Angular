@@ -1,0 +1,110 @@
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle"
+        data-toggle="collapse"
+        data-target="#myNavbar"
+      >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/home"
+        ><img
+          class="logo-img"
+          src="/assets/InstituteAliens.png"
+          alt="Institute's Logo"
+          title="InstituteAliens Logo"
+      /></a>
+      <a
+        style="
+          background-color: blue;
+          color: snow;
+          padding: 8px;
+          margin-top: 10px;
+          display: inline-block;
+        "
+        routerLink="/home/user-dashboard/admin-dashboard"
+        *ngIf="login_status && is_Admin"
+      >
+        Dashboard </a
+      ><a
+        style="
+          background-color: blue;
+          color: snow;
+          padding: 8px;
+          margin-top: 10px;
+          display: inline-block;
+        "
+        routerLink="/home/user-dashboard/dashboard"
+        *ngIf="login_status && !is_Admin"
+      >
+        Dashboard
+      </a>
+      <!-- <strong> Welcome </strong> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a
+            style="
+              background-color: rgb(182, 16, 16);
+              color: snow;
+              padding: 6px;
+              margin: 8px;
+            "
+            routerLink="explore-courses"
+            *ngIf="!is_Admin"
+            >Explore Courses</a
+          >
+          <!-- routerLink="/home/user-dashboard/add-course" -->
+          <a (click)="addNewCourse()" *ngIf="is_Admin" style="cursor: pointer;">
+            Add New Course
+          </a>
+        </li>
+        <li>
+          <a href="/home/about-us" *ngIf="!login_status">About InstituteAliens</a>
+        </li>
+        <li>
+          <a href="/home/support" title="Contact Us & Support" *ngIf="!is_Admin">
+            WeCare
+          </a>
+        </li>
+        <li>
+          <a
+            href="/login"
+            style="
+              background-color: rgb(182, 16, 16);
+              color: snow;
+              padding: 6px;
+              margin: 8px;
+            "
+            title="Login"
+            *ngIf="!login_status"
+          >
+            Login
+          </a>
+
+          <a
+            href="/logout"
+            style="
+              background-color: rgb(182, 16, 16);
+              color: snow;
+              padding: 6px;
+              margin: 8px;
+            "
+            title="Logout"
+            (click)="logout()"
+            *ngIf="login_status"
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <router-outlet></router-outlet> -->

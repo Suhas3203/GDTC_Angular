@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Job Section</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <!-- <mat-nav-list> 
+            <a mat-list-item routerLink="/dashboard/home" routerLinkActive="active">Home</a>
+            <a mat-list-item routerLink="/dashboard/all-courses" routerLinkActive="active">All Courses</a>
+            <a mat-list-item routerLink="/dashboard/in-progress-courses" routerLinkActive="active">In Progress Courses</a>
+            <a mat-list-item routerLink="/dashboard/completed-courses" routerLinkActive="active">Completed Courses</a>
+            <a mat-list-item>Job Section</a>
+          </mat-nav-list>
+        </mat-card>
+      </div> -->
+  <div class="col-md-12">
+    <div class="row" style="margin: 20px;">
+      <div class="col-md-4 mb-3" *ngFor="let job of jobs">
+        <mat-card style="margin: 10px;">
+          <mat-card-content>
+            <div class="d-flex justify-content-between">
+              <h4>{{ job.companyName }}</h4>
+              <img
+                src="{{ job.logoUrl }}"
+                alt="{{ job.companyName }} logo"
+                height="40"
+              />
+            </div>
+            <p class="mb-1">{{ job.package }} / {{ job.year }}</p>
+            <p class="mb-1">{{ job.location }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<!-- in-progress.component.html -->
+
+<div class="container">
+  <h2 class="text-center mt-3">Completed Courses</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-3">
+    <div class="col" *ngFor="let courses of completedCourses">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ courses.course.title }}</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="https://source.unsplash.com/random/900×700/?coding"
+          alt="{{ courses.course.title }}"
+        />
+        <mat-card-content>
+          <p>{{ courses.course.description }}</p>
+          <p><strong>Branch: </strong>{{ courses.branch.branchLocation }}</p>
+          <p><strong>Duration: </strong>{{ courses.duration }}</p>
+          <p><strong>Start Date: </strong>{{ courses.startDate | date }}</p>
+          <p><strong>End Date: </strong>{{ courses.endDate | date }}</p>
+          <p>
+            <strong>Fees Paid: </strong>{{ courses.fees | currency : "INR" }}
+          </p>
+          <p><strong>Status: </strong> Completed</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

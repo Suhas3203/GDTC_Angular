@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Add New Course</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width: 350px">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title" />
+  </mat-form-field>
+
+  <mat-form-field style="width: 350px">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field style="width: 350px">
+    <mat-label>Registration Validity</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [(ngModel)]="registrationValidity"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field style="width: 350px">
+    <mat-label>Pincode of Branch</mat-label>
+    <input matInput (input)="onInputPincode($event)" [(ngModel)]="pincode" />
+  </mat-form-field>
+
+  <mat-form-field style="width: 350px">
+    <mat-label>Branches</mat-label>
+    <mat-select
+      [(ngModel)]="selectedBranches"
+      (selectionChange)="getSelectedBranch($event)"
+      multiple
+    >
+      <mat-option *ngFor="let branch of branchesList" [value]="branch.Name">
+        {{ branch.Name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="width: 350px">
+    <mat-label>Other Branches</mat-label>
+    <input matInput [(ngModel)]="otherBranches" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions style="margin-left: 150px">
+  <button mat-raised-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>

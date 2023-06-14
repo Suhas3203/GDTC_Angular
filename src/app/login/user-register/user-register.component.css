@@ -1,0 +1,141 @@
+.registration-dialog {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-left: 70px;
+}
+
+.registration-form {
+  padding: 20px;
+  margin-left: 50px;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.registration-form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.registration-form button.register-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.registration-form button.register-button:hover {
+  background-color: #0d8bf0;
+}
+
+.registration-form button.cancel-button {
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 10px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.registration-form button.cancel-button:hover {
+  background-color: #e64a19;
+}
+
+/* .registration-dialog {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.registration-form {
+  padding: 20px;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.registration-form button.register-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.registration-form button.register-button:hover {
+  background-color: #0d8bf0;
+}
+
+.registration-form button.cancel-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.registration-form button.cancel-button:hover {
+  background-color: #e64a19;
+} */
+
+/* .registration-dialog {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.registration-form {
+  padding: 20px;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.registration-form button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.registration-form button:hover {
+  background-color: #3e8e41;
+} */
